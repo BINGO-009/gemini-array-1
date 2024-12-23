@@ -1,0 +1,32 @@
+
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int[] new1 = new int[m];
+        int[] new2 = new int[n];
+        
+        
+        for (int i = 0; i < new1.length; i++) {
+            if (i < nums1.length) { 
+                new1[i] = nums1[i];
+            }
+        }
+        for (int j = 0; j < new2.length; j++) {
+            if (j < nums2.length) { 
+                new2[j] = nums2[j];
+            }
+        }
+        // Combine new1 and new2 into total
+        int[] total = new int[m + n];
+        for (int p = 0; p < new1.length; p++) {
+            total[p] = new1[p];
+        }
+        for (int q = 0; q < new2.length; q++) {
+            total[ m+q] = new2[q];
+        }
+        Arrays.sort(total);
+        for (int i = 0; i < total.length; i++) {
+            nums1[i] = total[i];
+        }
+    }
+}
