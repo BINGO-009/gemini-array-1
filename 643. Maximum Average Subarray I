@@ -9,7 +9,9 @@ class Solution {
         
         // Slide the window
         for (int i = k; i < nums.length; i++) {
-            currentSum += nums[i] - nums[i - k];
+            
+            currentSum -= nums[i-k];// its the first element that is minused
+            currentSum += nums[i];// its the second element from the last that is added
             maxSum = Math.max(maxSum, currentSum);
         }
         
